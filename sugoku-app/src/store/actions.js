@@ -56,7 +56,9 @@ export function validate(payload) {
       .then(response => response.json())
       .then(response => {
         console.log(response);
-        alert(response.status)
+        if (response.status === 'unsolved') {
+          alert(response.status)
+        }
       })
       .catch(err => {
         alert(err)

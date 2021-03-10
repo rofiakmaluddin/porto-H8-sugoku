@@ -18,6 +18,7 @@ export default function Game({ navigation }) {
       board
     }
     dispatch(validate(tempBoard))
+    navigation.navigate('Finish')
   }
   function autoSolve() {
     const tempBoard = {

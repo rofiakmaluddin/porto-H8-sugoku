@@ -1,7 +1,9 @@
 const initialState = {
-  username: 'Rofi',
+  username: '',
   board: [],
+  duplicatedBoard: [],
   difficulty: 'easy',
+  giveUp: false,
   isLoading: false
 }
 
@@ -12,8 +14,12 @@ function reducer(state = initialState, action) {
       return { ...state, username: payload}
     case 'SUDOKU/CHANGEBOARD':
       return { ...state, board: payload}
+    case 'SUDOKU/CHANGEDUPLICATEDBOARD':
+      return { ...state, duplicatedBoard: payload}
     case 'SUDOKU/CHANGEDIFFICULTY':
       return { ...state, difficulty: payload}
+    case 'SUDOKU/GIVEUP':
+      return { ...state, giveUp: payload}
     case 'LOADING/ISLOADING':
       return { ...state, isLoading: payload}
     default:
